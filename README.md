@@ -1,5 +1,9 @@
 # Navigation Wizard
 
+*Because I always do SPA and I always recreate a navigation system from scratch...*
+
+**Corporate version below:**
+
 Navigation Wizard is a lightweight JavaScript vanilla library to create multi-step wizards or screen navigation flows in your web applications. 
 
 It provides an easy-to-use interface for managing screen transitions, navigation controls, and custom logic for screen progression.
@@ -96,7 +100,7 @@ new NavigationWizard(className)
 The provided sample demonstrates a basic implementation of the Navigation Wizard:
 
 1. The HTML structure defines three screens with the class `harry`.
-2. Each screen contains content and navigation buttons.
+2. Each screen contains content and navigation buttons (`harry-prev`, `harry-next`, `harry-home`). You get the classname allows the auto-discover.
 3. The second screen includes a checkbox, which could be used to control navigation to the next screen.
 
 ## License
