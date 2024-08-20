@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Wizard Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .screen {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Navigation Wizard Demo</h1>
+
+    <div class="harry screen">
+        <h2>Screen 1</h2>
+        <p>Welcome to the first screen of the wizard.</p>
+        <button class="harry-next">Next</button>
+    </div>
+
+    <div class="harry screen">
+        <h2>Screen 2</h2>
+        <p>This is the second screen of the wizard.</p>
+        <div>
+            <input type="checkbox" id="agreeCheckbox">Check to continue</input>
+        </div>
+        <div style="margin-top: 12px;">
+            <button class="harry-prev">Previous</button>
+            <button class="harry-next">Next</button>
+        </div>
+    </div>
+
+    <div class="harry screen">
+        <h2>Screen 3</h2>
+        <p>This is the final screen of the wizard.</p>
+        <button class="harry-prev">Previous</button>
+        <button class="harry-home">Home</button>
+    </div>
+
+    <script type="module">
+        import NavigationWizard from './NavigationWizard.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const wizard = new NavigationWizard('harry');
+
+            wizard.setCanGoNext(1, () => {
+                // Example: Only allow going to the next screen if a checkbox is checked
+                const checkbox = document.querySelector('#agreeCheckbox');
+                return checkbox ? checkbox.checked : true;
+            });
+
+            wizard.onNext = ((event) => {
+                console.log('Moved to next screen.');
+            });
+
+            wizard.onPrevious = ((event) => {
+                console.log('Moved to previous screen.');
+            });
+
+            wizard.onBackHome = ((event) => {
+                console.log('Returned to home screen.');
+            });
+        });
+    </script>
+</body>
+
+</html>
