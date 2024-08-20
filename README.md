@@ -1,10 +1,10 @@
-# Navigation Wizard
+# NavigationWizard.js
 
 *Because I always do SPA and I always recreate a navigation system from scratch...*
 
 **Corporate version below:**
 
-Navigation Wizard is a lightweight JavaScript vanilla library to create multi-step wizards or screen navigation flows in your web applications. 
+NavigationWizard.js is a lightweight JavaScript vanilla library to create multi-step wizards or screen navigation flows in your web applications. 
 
 It provides an easy-to-use interface for managing screen transitions, navigation controls, and custom logic for screen progression.
 
